@@ -17,25 +17,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sections.forEach(s => observer.observe(s));
 
-  // Contact form submission
+  // Contact form — submits to Formspree, falls back to toast if ID not set
   const form = document.getElementById('contact-form');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      showToast('Message sent — I\'ll be in touch shortly!');
-      form.reset();
-    });
-  }
 
-  // Hero email CTA
-  const heroForm = document.getElementById('hero-form');
-  if (heroForm) {
-    heroForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const input = heroForm.querySelector('input[type="email"]');
-      if (input.value) {
-        showToast('Thanks! I\'ll reach out soon.');
-        input.value = '';
+      const action = form.getAttribute('action') || '';
+      if (action.includes('YOUR_FORM_ID')) {
+        showToast('Add your Formspree ID to the form action to enable sending.');
+        return;
+      }
+
+      const btn = form.querySelector('button[type="submit"]');
+      const original = btn.textContent;
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      try {
+        const res = await fetch(action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        });
+
+        if (res.ok) {
+          showToast('Message sent — I\'ll be in touch shortly!');
+          form.reset();
+        } else {
+          showToast('Something went wrong. Please email me directly.');
+        }
+      } catch {
+        showToast('Something went wrong. Please email me directly.');
+      } finally {
+        btn.textContent = original;
+        btn.disabled = false;
       }
     });
   }

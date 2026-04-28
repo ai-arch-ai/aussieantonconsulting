@@ -18,10 +18,6 @@
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
     </div>
-    <a href="https://www.linkedin.com/in/anton-solopov/" target="_blank" rel="noopener noreferrer" class="nav__cta" aria-label="LinkedIn profile">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-      LinkedIn
-    </a>
     <a href="#contact" class="nav__cta">Get in touch</a>
   </nav>
 
@@ -37,8 +33,19 @@
       <a href="https://calendly.com/YOUR-LINK" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Book a free 30-min call</a>
       <a href="#about" class="btn btn--outline">Learn more</a>
     </div>
-    <div class="hero__card" aria-label="Hero image">
-      <img src="assets/images/CBD.jpg" alt="CBD skyline" style="width:100%;height:100%;object-fit:cover;" />
+    <div class="hero__card" aria-label="Brand visual">
+      <div class="hero__abstract" aria-hidden="true">
+        <div class="hero__abstract-grid"></div>
+        <div class="hero__abstract-circle hero__abstract-circle--1"></div>
+        <div class="hero__abstract-circle hero__abstract-circle--2"></div>
+        <div class="hero__abstract-circle hero__abstract-circle--3"></div>
+        <div class="hero__abstract-bar hero__abstract-bar--1"></div>
+        <div class="hero__abstract-bar hero__abstract-bar--2"></div>
+        <div class="hero__abstract-bar hero__abstract-bar--3"></div>
+        <div class="hero__abstract-label hero__abstract-label--1">Strategy</div>
+        <div class="hero__abstract-label hero__abstract-label--2">Growth</div>
+        <div class="hero__abstract-label hero__abstract-label--3">Results</div>
+      </div>
     </div>
   </section>
 
@@ -73,6 +80,48 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Process ── -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="process__header">
+        <p class="section-label">How it works</p>
+        <h2 class="section-title">From first call to real results</h2>
+        <p class="section-body">A clear, structured process — so you always know what to expect and what comes next.</p>
+      </div>
+      <div class="process__steps">
+
+        <div class="process__step">
+          <div class="process__step-number">01</div>
+          <div class="process__step-content">
+            <h3 class="process__step-title">Discovery call</h3>
+            <p class="process__step-body">We start with a free 30-minute conversation. I listen, ask the right questions, and get a clear picture of where you are and where you want to be.</p>
+          </div>
+        </div>
+
+        <div class="process__connector" aria-hidden="true"></div>
+
+        <div class="process__step">
+          <div class="process__step-number">02</div>
+          <div class="process__step-content">
+            <h3 class="process__step-title">Strategy & plan</h3>
+            <p class="process__step-body">I develop a tailored engagement plan — clear scope, timeline, and outcomes. No vague deliverables, no surprises. You approve before anything begins.</p>
+          </div>
+        </div>
+
+        <div class="process__connector" aria-hidden="true"></div>
+
+        <div class="process__step">
+          <div class="process__step-number">03</div>
+          <div class="process__step-content">
+            <h3 class="process__step-title">Execution & support</h3>
+            <p class="process__step-body">We work together to implement the plan. I stay involved, adapt as things evolve, and measure progress against the outcomes we defined at the start.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -119,21 +168,6 @@
           <p class="service-card__body">Enter new markets or accelerate growth with research-backed strategies and on-the-ground Australian expertise.</p>
         </article>
 
-        <article class="service-card">
-          <div class="service-card__icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <h3 class="service-card__title">Team &amp; Culture</h3>
-          <p class="service-card__body">Build high-performing teams with the right structure, hiring frameworks, and leadership practices in place.</p>
-        </article>
-
-        <article class="service-card">
-          <div class="service-card__icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
-          <h3 class="service-card__title">Financial Clarity</h3>
-          <p class="service-card__body">Bring structure to your numbers — budgeting, forecasting, and unit economics explained in plain language.</p>
-        </article>
 
       </div>
     </div>
@@ -248,7 +282,8 @@
           </div>
         </div>
 
-        <form class="contact__form" id="contact-form" novalidate>
+        <!-- Sign up at formspree.io, create a form, and replace YOUR_FORM_ID below -->
+        <form class="contact__form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
           <div class="form-field">
             <label for="name">Full name</label>
             <input type="text" id="name" name="name" placeholder="Jane Smith" required autocomplete="name" />
@@ -274,6 +309,21 @@
   <!-- ── Footer ── -->
   <footer>
     <div class="footer">
+      <div class="footer__brand">
+        <span class="footer__logo">AAC</span>
+        <span class="footer__tagline">Clear strategy. Real results.</span>
+      </div>
+      <div class="footer__links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a href="https://www.linkedin.com/in/anton-solopov/" target="_blank" rel="noopener noreferrer" class="footer__social" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+    <div class="footer__bottom">
       <span>© 2026 Aussie Anton Consulting. All rights reserved.</span>
       <span>Sydney, Australia</span>
     </div>
